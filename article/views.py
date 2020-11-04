@@ -36,3 +36,8 @@ def article_create(request):
         article_post_form=ArticlePostForm()
         context={"article_post_form":article_post_form}
         return render(request,'article/create.html',context)
+
+def article_delete(request,id):
+    article=ArticlePost.objects.get(id=id)
+    article.delete()
+    return redirect("article:article_list")
