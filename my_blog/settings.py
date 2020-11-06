@@ -127,24 +127,30 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static'),]
 
 
-# SMTP服务器，改为你的邮箱的smtp!
-EMAIL_HOST = 'smtp.qq.com'
-# 改为你自己的邮箱名！
-EMAIL_HOST_USER = '2589641825@qq.com'
-# 你的邮箱密码
-EMAIL_HOST_PASSWORD = 'ypxrmfoyrikrdiba'
-# 发送邮件的端口
-EMAIL_PORT = 25
-# 是否使用 TLS
-EMAIL_USE_TLS = True
-# 默认的发件人
-DEFAULT_FROM_EMAIL = 'Gzj的博客 <2589641825@qq.com>'
+# # SMTP服务器，改为你的邮箱的smtp!
+# EMAIL_HOST = 'smtp.qq.com'
+# # 改为你自己的邮箱名！
+# EMAIL_HOST_USER = '2589641825@qq.com'
+# # 你的邮箱密码
+# EMAIL_HOST_PASSWORD = 'ypxrmfoyrikrdiba'
+# # 发送邮件的端口
+# EMAIL_PORT = 25
+# # 是否使用 TLS，TLS与SSL在传输层对网络连接进行加密
+# EMAIL_USE_TLS = True
+# # 默认的发件人
+# DEFAULT_FROM_EMAIL = 'Gzj的博客 <2589641825@qq.com>'
 
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.sina.com'
-# EMAIL_HOST_USER = '13684409803@sina.cn'
-# EMAIL_HOST_PASSWORD = 'f2a8967691378204'
-# EMAIL_PORT = 25
+EMAIL_HOST = 'smtp.sina.com'
+EMAIL_HOST_USER = '13684409803@sina.cn'
+EMAIL_HOST_PASSWORD = 'f2a8967691378204'
+EMAIL_PORT = 25
 # EMAIL_FROM = '13684409803@sina.cn'
+# 下面这句一定要加
+DEFAULT_FROM_EMAIL='13684409803@sina.cn'
 # CONFIRM_DAYS = 7
+
+# 媒体文件地址
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
