@@ -22,6 +22,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('article/',include('article.urls',namespace='article')),
+    path('comment/',include('comment.urls',namespace='comment')),
     path('password-reset/',include('password_reset.urls')),
     path('userprofile/',include('userprofile.urls',namespace='userprofile'))
 ]
