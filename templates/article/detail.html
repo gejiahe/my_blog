@@ -10,6 +10,7 @@
                 max-width: 100%;
                 height: auto;
             }
+
         </style>
     {% endblock %}
 
@@ -100,6 +101,7 @@
 
             </div>
 
+
             <!-- 新增的目录 -->
             <div class="col col-md-3 mt-4 sidebar" id="sidebar" >
                 <!-- 目录 -->
@@ -109,6 +111,7 @@
                             <div>
                                 {{ toc|safe }}
                             </div>
+                            <div id="small_sidebar">目录</div>
                         </div>
             </div>
         </div>
@@ -124,6 +127,39 @@
         transform: translate(0, 0);
         transform: translate3d(0, 0, 0);
         will-change: position, transform;
+
+        width:15rem;
+        border: 1px solid #009f95;
+        {#background-color: #ccc;#}
+        opacity: 0.85;
+    }
+    #small_sidebar{
+        display: none;
+    }
+    @media screen and (max-width:768px ) {
+                .sidebar__inner {
+                    position: fixed;
+                    background-color: #ccc;
+                    right: -15rem;
+                    top: 25%;
+                }
+                #small_sidebar{
+                    display: block;
+                    width: 2rem;
+                    height: 3rem;
+                    background-color: #ccc;
+                    border: #009f95 1px solid;
+                    position: absolute;
+                    top:50%;
+                    left: -2rem;
+                    transform: translateY(-50%);
+                    text-align: center;
+                    line-height: 1.25rem;
+                }
+            }
+    .sidebar__inner strong{
+        margin-left: 1rem;
+        padding-top: 1rem;
     }
 </style>
 
@@ -149,8 +185,19 @@
 <script src="{% static 'sticky_sidebar/jquery.sticky-sidebar.min.js' %}"></script>
 <script type="text/javascript">
     $('#sidebar').stickySidebar({
-        topSpacing: 20,
+        topSpacing: 80,
         bottomSpacing: 20,
+
     });
+
+        let sidebar__inner=document.getElementsByClassName("sidebar__inner")[0];
+        {#var small_sidebar=document.getElementById("small_sidebar");#}
+        sidebar__inner.onmouseover=function(){
+            sidebar__inner.style.right=0;
+        };
+        sidebar__inner.onmouseout=function(){
+            sidebar__inner.style.right="-15rem";
+        }
 </script>
+
 {% endblock %}
