@@ -3,10 +3,10 @@ from article.models import ArticlePost
 from django.contrib.auth.models import User
 # django-ckeditor
 from ckeditor.fields import RichTextField
-
+from mptt.models import MPTTModel, TreeForeignKey
 
 # Create your models here.
-class Comment(models.Model):
+class Comment(MPTTModel):
     article = models.ForeignKey(
         ArticlePost,
         on_delete=models.CASCADE,
@@ -21,7 +21,25 @@ class Comment(models.Model):
     body = RichTextField()
     created = models.DateTimeField(auto_now_add=True)
 
-    class Meta:
+    # 新增，mptt树形结构
+    parent = TreeForeignKey(
+        'self',
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name='children'
+    )
+
+    # 新增，记录二级评论回复给谁, str
+    reply_to = models.ForeignKey(
+        User,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name='replyers'
+    )
+
+    class MPTTMeta:
         ordering = ('created',)
 
     def __str__(self):
