@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 第三方库 重置密码
     'password_reset',
+    'notifications',
     'taggit',
     'ckeditor',
     'mptt',
@@ -189,3 +190,5 @@ CKEDITOR_CONFIGS = {
         'extraPlugins': ','.join(['codesnippet', 'prism', 'widget', 'lineutils']),
     }
 }
+# Refused to display 'http://127.0.0.1:8000/comment/post-comment/16/10' in a frame because it set 'X-Frame-Options' to 'deny'.
+X_FRAME_OPTIONS = 'SAMEORIGIN'

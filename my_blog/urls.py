@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
+import notifications.urls
 
 
 urlpatterns = [
@@ -24,7 +25,9 @@ urlpatterns = [
     path('article/',include('article.urls',namespace='article')),
     path('comment/',include('comment.urls',namespace='comment')),
     path('password-reset/',include('password_reset.urls')),
-    path('userprofile/',include('userprofile.urls',namespace='userprofile'))
+    path('userprofile/',include('userprofile.urls',namespace='userprofile')),
+    path('inbox/notifications/', include(notifications.urls, namespace='notifications')),
+
 ]
 
 #添加这行
