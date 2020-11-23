@@ -23,9 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8d2!@7wr38&wb_6_ekiv86rot3z(1tb!(&kdv+7e7u@y9f^-yc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,12 +45,27 @@ INSTALLED_APPS = [
     'taggit',
     'ckeditor',
     'mptt',
+    # 第三方登录
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # 可添加需要的第三方登录
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.weibo',
     # 01-注册app
     'article',
     'userprofile',
     'comment',
-
+    'notice',
 ]
+
+# 设置站点
+SITE_ID = 1
+
+# 登录成功后重定向地址
+# LOGIN_REDIRECT_URL = '/article/article_list/'
+LOGIN_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -77,6 +94,14 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    # Django 后台可独立于 allauth 登录
+    'django.contrib.auth.backends.ModelBackend',
+
+    # 配置 allauth 独有的认证方法，如 email 登录
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 WSGI_APPLICATION = 'my_blog.wsgi.application'
 
@@ -130,6 +155,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static'),]
+STATICFILES_root=os.path.join(BASE_DIR,'collected_static')
 
 
 # # SMTP服务器，改为你的邮箱的smtp!

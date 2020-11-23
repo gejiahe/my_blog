@@ -18,7 +18,7 @@ from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
 import notifications.urls
-
+from article.views import article_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +27,9 @@ urlpatterns = [
     path('password-reset/',include('password_reset.urls')),
     path('userprofile/',include('userprofile.urls',namespace='userprofile')),
     path('inbox/notifications/', include(notifications.urls, namespace='notifications')),
+    path('notice/', include('notice.urls', namespace='notice')),
+    path('accounts/', include('allauth.urls')),
+    path('', article_list, name='home'),
 
 ]
 
