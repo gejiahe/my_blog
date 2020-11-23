@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab1dd55b-9fc4-49da-83e9-3c9e911ae5a8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="ab1dd55b-9fc4-49da-83e9-3c9e911ae5a8" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +216,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/ckeditor/ckeditor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -304,7 +302,7 @@
       <workItem from="1606012017111" duration="9188000" />
       <workItem from="1606103668080" duration="1203000" />
       <workItem from="1606132234009" duration="3015000" />
-      <workItem from="1606169575189" duration="3227000" />
+      <workItem from="1606169575189" duration="3613000" />
     </task>
     <task id="LOCAL-00001" summary="create-project and config apps of article">
       <created>1604481169686</created>
@@ -404,11 +402,18 @@
       <option name="project" value="LOCAL" />
       <updated>1606172404963</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="ckeditor.js和ckeditor-init.js无法加载">
+      <created>1606172901897</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1606172901898</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140933000" />
+    <option name="totallyTimeSpent" value="141319000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
